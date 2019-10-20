@@ -5,8 +5,7 @@ class Student
   @@all = []
 
   def initialize(student_hash)
-    @name = :name 
-    
+    student_hash.each { |key, value| self.send("#{key}=", value) }
   end
 
   def self.create_from_collection(students_array)
